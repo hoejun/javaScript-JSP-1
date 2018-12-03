@@ -1,0 +1,47 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
+<title>HTML문서 안에 자바스크립트 삽입 하는 방법</title>
+
+<!-- 
+스타일 시트 적용시키기
+: body 태그 안에 들어가는 모든 글꼴에 대해서 파랑색 적용
+ -->
+<style type="text/css">
+	body{
+			color: blue;
+	}
+</style>
+
+<!-- 
+[자바스크립트 코드 삽입 방법1.]
+:head 태그안에 script라는 블록을 사용함.
+
+ctrl + shift + f : 자동정렬
+ -->
+<script type="text/javascript">
+	//도큐먼트 객체의 write()메소드로 화면에 출력
+	document.write("안녕하세요<br/>");
+	document.write("반갑습니다<br/>");
+
+	//메세지 박스 띄우기 : window.alert()메소드
+
+	window.alert("또만나요.\n낼봐요.");
+</script>
+</head>
+
+<body>
+<!-- 
+body태그 안에 script 블록 사용 가능
+ -->
+<script type="text/javascript">
+	window.alert("<body>부분 마지막에 실행됨");
+</script>
+
+</body>
+</html>
+<!-- 중요!!!
+html문서 내부 코드 실행순서 -> body태그 실행하기전에 head태그 안에 있는 부분이 먼저 실행됨.
+ -->
+

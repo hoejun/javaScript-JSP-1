@@ -1,0 +1,178 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	function check() {
+		
+		if(document.fr.name.value == ""){ //이름이 입력 되었는지 체크 경고메세지
+			window.alert("이름을 입력하시오");
+			document.fr.name.focus();
+			return false;
+		}
+		
+		if(document.fr.id.value == ""){ //이름이 입력 되었는지 체크 경고메세지
+			window.alert("아이디를 입력하세요");
+			document.fr.id.focus();
+			return false;
+		}
+		
+		if(document.fr.id.value.length < 4 || document.fr.id.value.length > 10){//아이디를 4~10사이입력 하지 않았다면 경고메시지 -> "아이디 4~10자 사이로 입력하세요"
+			window.alert("아이디 4~10자 사이로 입력하세요");
+			document.fr.id.focus();
+			return false;
+		}
+		
+		
+		if(document.fr.pwd.value == ""){//비밀번호 입력 되었는지 체크 경고메세지
+			window.alert("비밀번호를 입력하시오");
+			document.fr.pwd.focus();
+			return false;	
+		}
+		
+		if(document.fr.pwd2.value == ""){//비밀번호 확인 란에 입력 되었는지 체크 경고메세지
+			window.alert("비밀번호를 한번 더 확인 입력하시오");
+			document.fr.pwd2.focus();
+			return false;	
+		}
+
+		if(document.fr.pwd.value !=document.fr.pwd2.value){//비밀번호 입력란에 적은 비밀번호와 비밀번호 확인 란에 적은 비밀번호가 일치 하지 않으면 
+			//-> 경고메세지 "비밀번호 틀림"
+			window.alert("비밀번호 틀림");
+			document.fr.pwd.value = "";//비밀번호 입력란 ->"공백"
+			document.fr.pwd2.value = ""; 		//비밀먼호 확인 ->"공백"
+
+			document.fr.pwd.focus();		//비밀번호 입력란에 포커스 주기
+			return false;
+			
+		}
+
+		if(document.fr.ju1.value == ""){//주민번호 앞자리 입력 되었는지 체크 경고메세지
+			window.alert("주민번호 앞자리를 입력하시오");
+			document.fr.ju1.focus();
+			return false;
+		}
+		
+		if(document.fr.ju1.value.length !=6){//주민번호 앞자리 6자 입력 되어 있지 않다면?
+			window.alert("주민번호 앞자리 6자 입력해주세요");
+			document.fr.ju1.focus();
+			return false;	
+		}
+		
+		
+		if(document.fr.ju2.value == ""){		//주민번호 뒷자리 입력 되었는지 체크 경고 메세지
+
+			window.alert("주민번호 뒷자리를  입력하시오");
+			document.fr.ju2.focus();
+			return false;	
+		}
+		
+		if(document.fr.ju2.value.length !=7){//주민번호 앞자리 6자 입력 되어 있지 않다면?
+			window.alert("주민번호 뒷자리 7자 입력해주세요");
+			document.fr.ju2.focus();
+			return false;	
+		}
+		
+		if(document.fr.job.selectedIndex == 0){//직업 입력 되었는지 체크 경고 메세지
+			window.alert("직업을 입력하세요");
+			document.fr.job.focus();
+			return false;
+		}
+		
+		if(document.fr.sex[0].checked == false && 
+				dodocument.fr.sex[1].checked == false){//비밀번호 입력 되었는지 체크 경고메세지
+			window.alert("성별을 입력하세요");
+			document.fr.sex[0].focus();
+			return false;	
+		}
+		
+		if(document.fr.hop[0].checkede == false&&
+				document.fr.hop[1].checkede == false &&
+				document.fr.hop[2].checkede == false){//비밀번호 입력 되었는지 체크 경고메세지
+			window.alert("취미를 입력하시오");
+			document.fr.hop[0].focus();
+			return false;
+		}
+		
+		if(document.fr.content.value == ""){//비밀번호 입력 되었는지 체크 경고메세지
+			window.alert("가입동기를 입력하시오");
+			document.fr.content.focus();
+			return false;
+		}
+
+
+		//주민번호 앞자리 6자 입력 되어 있지 않다면?
+				//경고메세지->"주민번호 앞자리 6자 입력해주세요"
+		//주민번호 뒷자리 입력 되었는지 체크 경고 메세지
+		//주민번호 뒷자리 7자 입력 되어 있지 않다면?
+				//경고메세지 -> "주민번호 뒷자리 7자 입력해주세요"
+		//직업 입력 되었는지 체크 경고 메세지
+		//성별 입력 되었는지 체크 경고메세지
+		//취미 입력 되었는지 체크 경고메세지
+		//가입 동기 입력 되었는지 체크 경고메세지
+	}
+</script>
+
+</head>
+<body>
+<h1 align="center">회원가입</h1>
+<form action="a.jsp"   name="fr" method="post" onsubmit="return check()">
+		<table border="1" align="center" >
+			
+			<tr>
+				<td>*이름</td>
+				<td><input type="text"  name="name"></td>
+			</tr>
+			<tr>
+				<td>*ID</td>
+				<td><input type="text" name="id"></td>
+			</tr>
+			<tr>
+				<td>*비밀번호</td>
+				<td><input type="text" name="pwd"></td>
+			</tr>
+			<tr>
+				<td>*비밀번호확인</td>
+				<td><input type="text" name="pwd2"></td>
+			</tr>
+			
+			<tr>
+				<td>*주민번호</td>
+				<td><input type="text" name="ju1">-
+				<input type="text" name="ju2"></td>
+			</tr>
+			<tr>
+				<td>*직업</td>
+				<td>
+				<select name="job">
+				<option selected>직업명</option>
+				<option value="학생">학생</option>
+				<option value="회사원">회사원</option>
+				<option value="기타">기타</option>
+				</select>
+				</td>
+			</tr>
+			<tr>
+				<td>*성별</td>
+				<td><input type="radio" value="남" name="sex">남
+				    <input type="radio" value="여" name="sex">여
+				</td>
+			</tr>
+			<tr>
+				<td>*취미</td>
+				<td><input type="checkbox" name="hop" value="독서">독서<input type="checkbox"value="등산">등산<input
+					type="checkbox"value="낚시">낚시</td>
+			</tr>
+			<tr>
+				<td>*가입동기</td>
+				<td><textarea rows="10" cols="60" name="content" ></textarea></td>
+			</tr>
+			<tr>
+				<td colspan=2;><input type="submit" value="가입"> <input type="reset" value="취소"></td>
+			</tr>
+		</table>
+	</form>
+
+</body>
+</html>

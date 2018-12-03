@@ -1,0 +1,49 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>회원가입</title>
+
+<!-- Register.css 스타일(폰트,글자크기,글작색)적용 -->
+<link rel="stylesheet" type="text/css" href="Register.css" > 
+
+<!-- Register.js파일의 함수 불러다 사용(폼체크) -->
+<script language="javascript"  type="text/javascript" src="Register.js"></script>
+
+</head>
+<body>
+
+<form id="RegisterForm" name="RegisterForm"  action="Register.jsp" method="post" onsubmit="return checkForm();">
+	<table border="1" width="600" align="center">
+		<tr>
+			<td colspan="2" align="center" bgcolor="blue" style="color: white;">회원가입</td>
+		</tr> 
+		<tr>
+			<td align="right">아이디:</td>
+			<td>
+				<input type="text" id="txtUserID" name="txtUserID" />
+				<input type="button" value="아이디중복확인" onclick="CheckID();" />
+			</td>		
+		</tr>
+		<tr>
+			<td align="right">비밀번호:</td>
+			<td>
+				<input type="password" id="txtPassword" name="txtPassword"/>&nbsp;
+				암호확인<input type="password" id="txtPasswordConfirm" name="txtPasswordConfirm"/>
+			</td>		
+		</tr>
+		<tr>
+			<td align="right">이름:</td>
+			<td><input type="text" id="txtCustomerName" name="txtCustomerName"></td>
+		</tr>
+		<tr>
+			<td colspan="2" align="center">
+				<input type="submit" value="회원가입">
+				<input type="reset" value="취소">			
+			</td>
+		</tr>
+	</table>
+	
+	</form>
+</body>
+</html>

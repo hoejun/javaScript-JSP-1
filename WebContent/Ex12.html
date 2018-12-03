@@ -1,0 +1,53 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Insert title here</title>
+
+<script type="text/javascript">
+//2단
+for(var i=1; i<=9; i++){
+		document.write("2*"+i+"=" +(2*i)+"<br/>");
+}
+</script>
+
+<script type="text/javascript">
+//2단~9단
+for(var j=2; j<=9; j++){ //2단~9단
+	for(var k=1; k<=9; k++){ //1~9
+		document.write(j+"*"+k+"="+(j*k)+"<br/>");
+	}
+	document.write("<br/>");
+}
+</script>
+
+<script type="text/javascript">
+
+document.write("<table border='1' width='100%'>");
+
+document.write("<tr>");
+//단 제목 반복
+for (var i = 2; i <= 9; i++) {
+	document.write("<td bgcolor='silver' align='center'>" + i + "단</td>");
+}
+document.write("</tr>");
+
+document.write("<tr>");
+
+for(var j=2; j<=9; j++){
+	document.write("<td>");
+	for(var k=1; k<=9; k++){
+		document.write(j+"*"+k+"="+(j*k)+"<br/>");
+	}
+	document.write("</td>");
+}
+
+document.write("</tr>");
+document.write("</table>");
+</script>
+
+</head>
+<body>
+
+</body>
+</html>

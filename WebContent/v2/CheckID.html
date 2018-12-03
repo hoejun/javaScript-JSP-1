@@ -1,0 +1,45 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+
+	function ConfirmID() {
+		//아이디중복을 위한 아이디 값 체크
+		
+		//적은 아이디 란 가져오기
+		var id = document.getElementById("txtUserID");
+		
+		//만약 input태그에 적은 아이디의 길이가 3자보다 적거나 12자보다 크다면? 경고메세지
+		if(id.value.length < 3 || id.value.length > 12){
+			window.alert("아이디를 3자이상 12이하로 입력하시오.");
+			id.focus();
+		}else{//적은 아이디가 3자보다 많거나 12자보다 작게 입력했다면?
+			  //아이디를 사용할거냐 말거냐 물어본다.
+			  //(확인)버튼을 누르면 true리턴
+			  //(취소)버튼을 누르면 false리턴
+			  if(window.confirm("사용할 수 있는 아이디입니다.\n사용하시겠습니까?")){
+				  //부모창(Register.html)의 텍스트박스로 데이터 전송: opener
+				  opener.document.getElementById("txtUserID").value=
+					  document.getElementById("txtUserID").value;
+				  //현재 아이디 중복 창을 닫는다.
+				  window.close();
+				    
+			  }else{//취소 버튼 누르면
+				    //아이디 적는 란에 다시 포커스 주기
+				    document.getElementById("txtUserID").focus();
+			  }
+		}
+	}
+</script>
+
+</head>
+<body>
+<!-- 아이디 중복 체크 폼-->
+	<form action="" id="CheckID.html" name="CheckID.html" method="post">
+	아이디: <input type="text" name="txtUserID" id="txtUserID"/>
+	<input type ="button" value="검사" onclick="ConfirmID();"/>
+</form>
+</body>
+</html>

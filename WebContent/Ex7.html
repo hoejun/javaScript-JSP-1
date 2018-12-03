@@ -1,0 +1,32 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>기본 출력문</title>
+
+<script type="text/javascript">
+//[1] 어떤 결과를 화면에 출력하기 - > document 객체의 write메소드 이용
+/*
+	write메소드는?
+	<html>문서의 <body></body>영역에다가 출력시키는 일을 함
+ */
+ 
+ document.write("문서 영역에 결과 값 출력<br/>");
+	
+ //모든 객체의 부모객체는 window객체 입니다.
+ //원칙은 아래와 같이 쓰는데 .. window객체를 생략해도 상관 없다.
+ window.document.write("window 객체는 생략 가능<br/>");
+ 
+ //[2]경고, 알림창띄우기
+ window.alert("메세지 박스 결과 값 출력");
+ 
+ alert("역시 window객체는 생략 가능");
+
+
+
+</script>
+</head>
+<body>
+
+</body>
+</html>

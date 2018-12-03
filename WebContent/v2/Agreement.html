@@ -1,0 +1,40 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Insert title here</title>
+
+<script type="text/javascript">
+	//회원가입 버튼을 눌렀을때 함수 호출
+	function CheckForm() {
+		//id가 "OK"인 체크박스의 값을 가져온다(체크됨:true, 노테크:false)
+		var ok=document.getElementById("OK");
+		
+		//만약 약관에 동의가 체크되어 있으면?
+		if(ok.checked == true){
+			//Register.html 페이지로 이동
+			location.href="Register.html"; //이동			
+		//체크되어 있지 않다면...
+		}else{
+			window.alert("약관에 동의 하셔야 합니다.");
+			return false;
+		}
+	}
+</script>
+</head>
+<body>
+<textarea style="width: 400px; height:61px">
+우리 쇼핑몰은 어쩌구 저쩌구...
+약관 내용 나열.........
+약관 내용 나열.........
+약관 내용 나열.........
+</textarea>
+
+<form id="MyForm">
+<input type="checkbox" id="OK">약관에 동의 하시겠습니까?
+<!-- 회원가입 버튼을 눌렀을때 CheckForm()함수 호출 -->
+<input type="button" value="회원가입" onclick="CheckForm();"/>
+</form>
+
+</body>
+</html>

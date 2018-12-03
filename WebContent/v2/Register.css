@@ -1,0 +1,13 @@
+@CHARSET "UTF-8";
+
+body, td, input {
+	color: black;
+	font-family: "맑은고딕" verdana 굴림;
+	font-size: 12px;
+}
+
+input {
+	border: groove 1px gray; 
+}
+
+

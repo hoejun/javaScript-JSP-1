@@ -1,0 +1,155 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Insert title here</title>
+
+<script type="text/javascript">
+	/* 산술연산자 : + - * / % */
+	
+	var intNum1 = 10;
+	var intNum2 = 3;
+	
+	document.write(intNum1 + intNum2 + "<br/>"); // 13
+	document.write(intNum1 % intNum2 + "<br/>"); //10 %3 -> 몫 : 3, 나머지:1, 결과값 : 1(나머지값)
+
+	/*관계(비교) 연산자  */
+	// == : 같은지? 같으면 참(true), 그렇지 않으면 거짓(flase)
+	// != : 다른지? 다르면(true), 같으면 거짓(flase)
+	// >=, >, <, <=
+		
+	var a = 3;
+	var b = 5;
+
+	//a와 b가 같으냐? 같으면 true, 다르면 false
+	document.write((a==b)+ "<br/>"); //false
+	document.write((a!=b) + "<br/>"); //true
+	
+	document.write((a > b)+"<br/>"); //false
+	document.write((a >= b) +"<br/>"); //false
+	
+	document.write((a < b) + "<br/>"); //true
+	document.write((a <=b) + "<br/>"); //true
+	
+	/*논리 연산자 */
+	// && 연산자 : 둘다 참일때만 참
+	// || 연산자 : 하나라도 참일때 참
+	// !연산자 : 반대를 나타냄
+
+	//           true && true =true
+	document.write((10 > 5)&&(5!=3)+ "<br/>"); //true
+	//				true || false=true
+	document.write(((10>=5) || (5==3))+ "<br/>"); //true
+
+	document.write(!(10<=5)+"<br/>"); //true
+	
+	/*조건(상항) 연산자 */
+	//3을 2로 나눴을때의 나머지가 0과 같으면 짝수 0과 같지 않으면 홀수
+	var result = (3%2 == 0) ?"짝수" : "홀수"; 
+	document.write("결과값 : "+ result +"<br/>");
+	
+	//4를 2로 나눴을때의 나머지가 1이 아니면 짝수 1이 맞으면 홀수 출력
+	var num =(4%2 != 1) ? "짝수" : "홀수";
+	document.write("결과값 : " + num + "<br/>");
+	
+</script>
+
+<script type="text/javascript">
+/*증감 연산자 */
+// ++연산자 : 변수에 저장되어 있는 값을 1증가
+// --연산자 : 변수에 저장되어 있는 값을 1감소
+
+// 전위 :  ++  -- 연산자가 변수앞에 오면 우선 증가/감소
+// 후위 :  ++  -- 연산자가 변수 뒤에 오면 해당라인을 실행후 나중에 연산.
+
+var a = 3;
+var b = 5;
+var c = 7;
+
+//순서1. ++a - > 4
+//순서2. --c - > 6
+//순서3. b--  *  --c  - > 5 * 6 = 30
+//순서4. ++a  + (b--  * --c)  -  > 34
+//순서5. d변수에 저장후 다음줄로 내려갈때! b--하기
+
+var d =	++a  +  b--  *  --c;
+document.write(d + "<br/>"); //34
+document.write(b + "<br/>"); //4
+
+/*증강연산자 연습 */
+var x = 3;
+var y = 5;
+var z = 7;
+
+//순서1. --y  - > 5에서 4
+//순서2. ++z  - > 7에서 8
+//순서3. 4 % 8 - > 4나누기 8의 나머지는 4
+//순서4. x--  -  4  ->  3  -  4 = -1
+//순서5. -1을 f변수에 담기
+//순서6. f에 -1을 담고 그다음 구문을 실행하기 전에 x--하여 -> x는 2가 됨.
+
+
+var f = x--  -  --y  %   ++z;
+//출력
+
+document.write(f + "<br/>"); //-1
+
+/* 
+참고!!!
+한행에 ++ --가 앞에 붙으면 제일먼저 연산 수행!!!!!!!!!!
+그러나 ++ --가 뒤에 붙으면 + - * / 연산보다 더 늦게 연삼함.
+*/
+
+/*대입 연산자 : +=   -=   *=    /=   %=    */ 
+
+// += : 원래 변수안에 있던 값에 누적
+// -= : 원래 변수안에 있던 값에다가 감소
+var e = 10;
+var g = 5;
+
+e += g; // e = e + g; 와 동일
+document.write(e + "<br/>");
+
+g -= 5;
+document.write(g + "<br/>");
+
+var h = 1;
+
+h = h + 1; //1증가 - > 2
+
+h += 1; //1증가 - > 3
+
+h++; //1증가 - > 4
+
+document.write(h + "<br/>")
+
+</script>
+
+<script type="text/javascript">
+
+/*연산자 우선순위 알아보기*/
+var i = 1;
+var j = 2;
+var k = 3;
+
+document.write("안녕" + 2 + 2 + "<br/>"); //문자열 + 문자열 -> "안녕22"
+document.write("     " + 2 + 2 + "<br/>");
+document.write("" + (2+2) + "<br/>"); //괄호 우선
+document.write(2 + 2 + "" + "<br/>"); //정수 덧셈 우선
+document.write((i=j) == 2); //true
+
+/* 
+== 관계(비교)연산자가 먼저 수행되고, 그 다음  = 대입 
+
+
+*/
+document.write(i)
+
+
+</script>
+
+</head>
+<body>
+
+</body>
+</html>

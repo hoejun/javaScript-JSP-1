@@ -1,0 +1,32 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Insert title here</title>
+
+<script type="text/javascript">
+
+//[1] write()메소드 : 문서 영역에 문자열/데이터 출력
+document.write("<hr/>");
+
+//[2] title속성 : 현재 문서의 <title>태그의 내용을 출력 또는 설정
+document.title = "현재 예제는 document 객체 학습중...";
+document.write("현재 문서의 제목 : " + document.title + "<br/>");
+
+//[3] lastMoodified 속성 : 현재 HTML문서가 마지막에 저장된 시간 
+document.write("현재 문서의 마지막 저장 시간:" +document.lastModified + "<br/>");
+
+//[4] 글꼴 색상 변경 관련 간단한 속성
+function ChangeColor() {
+	document.bgColor="silver";
+	document.fgColor="red";
+}
+
+</script>
+</head>
+<body>
+<!--  색상 변경 버튼을 눌렀을때 배경색 및 텍스트 색 변경 -->
+<input type="button" value="색상 변경" onclick="ChangeColor();">
+
+</body>
+</html>

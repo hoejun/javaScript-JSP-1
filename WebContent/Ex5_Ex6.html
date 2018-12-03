@@ -1,0 +1,28 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>자바스크립트 객체, 속성, 메소드, 이벤트</title>
+
+<script type="text/javascript">
+	//docmunt라는 객체의 write()메소드를 이용하여 문서에 출력
+	document.write("1. 객체.메소드()");
+
+    //document라는 개첵의  title라는 속성을 이용해서
+	//위의 <title></title> 내부의 텍스트 속성값을 동적으로 변경시킴
+	document.title= "2. 객체. 속성";
+</script>
+</head>
+<body>
+
+<!--  클릭 버튼을 눌렀을때 웹브라우저의 맨 아래의 상태 표시줄에 상태를 표시한다. -->
+<input type="button" value="상태표시줄 텍스트변경 이벤트 버튼" onclick="window.status='이벤트 호출';"/>
+
+<!-- 클릭 버튼을 눌렀을때 웹브라우저의 위에 경고창을 표시한다. -->
+<input type="button" value="경고창 띄우기 버튼" onclick="window.alert('안녕')"/> 
+
+<!-- 
+결론 : 객체, 속성, 메소드, 이벤트를 이용하여 Javascript를 사용한다.
+ -->
+</body>
+</html>

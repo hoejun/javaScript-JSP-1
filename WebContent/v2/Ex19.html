@@ -1,0 +1,94 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Insert title here</title>
+
+<!-- 순서3 -->
+<style type="text/css">
+div, td, input { /*form태그에 관한 모든 글꼴 및 색상 적용하는 CSS정의*/
+	color: navy; /*폰트 색상*/
+	font-size: 9pt; /*폰트 사이즈 9pt*/
+	font-family: "맑은고딕" Verdana 굴림; /*폰트 글씨체 종류 : "맑은고딕" verdana 굴림*/
+}
+</style>
+
+<!-- 순서2.-->
+<script type="text/javascript">
+//자바스크립트는 <form>태그의 id 속성값을 이용하여 <form>태그에 접근이 가능하다.
+function CheckForm() {
+	
+	/*
+	[1]아이디 체크 
+	document문서의<form id ="FrmLogin">안의.....
+	<input type="text" id="txtUserID" name="txtUserID">로부터 입력받은 id내용을 저장
+	*/ 
+	var txtUserID = document.FrmLogin.txtUserID;
+	
+	//만약 txtUserID값이 아무것도 입력되지 않았다면?(form에서 id가 입력되지 않았다면..)
+	if(txtUserID.value == ""){
+		//아이디를 입력하세요 경고메세지 띄어주기
+		window.alert("아이디를 입력하시오.");
+		
+		//아이디 폼 객체에 커서를 깜박거리는 포커스 주기 방법 2
+		document.FrmLogin.txtUserID.focus();//해당 id입력란에 포커스주기
+		
+		//해당 아이디폼에 접근하는 방법 1
+		//document.getElementById("txtUserID").focus();
+		
+		return false; //현재 submit 이벤트를 중지 
+	
+	//[2]암호체크
+	}else if(document.FrmLogin.txtPassword.value == ""){
+		//암호를 입력시오  경고 메세지 띄어 주기
+		window.alert("암호를 입력하시오");
+		
+		//패스워드 폼객체에 커서 깜박거리는 포커스주기
+		document.getElementById("txtPassword").focus();
+		
+		return false;
+		
+	}else{ //id, pass 모두 입력 받았다면? 이동 
+				
+			document.FrmLogin.action="Default.jsp";
+			//폼의 내용을 action속성의 URL로 전송
+			document.FrmLogin.submit();
+		
+	}
+}
+
+</script>
+
+</head>
+
+<!--폼태그는 2가지이상의 속성을 지님-->
+<!--
+- action 속성: 현재  폼안의 데이터를 모두담아 어느페이이지로 이동할건지에 대한 이동할페이지명
+- method : "Post" 이동한 페이지의 주소창에 데이터 숨기면서 전송
+- method : "get" 이동한 페이지의 주소창에 데이터 노출하면서 전송
+ -->
+<body>
+	<!-- 순서1. 아이디 비밀번호 폼 만들기 3행2열 -->
+	<form id="FrmLogin" name="FrmLogin" action="Default.jsp" method="POST">
+		<div align="center">
+			<table border="1" width="300">
+				<tr>
+					<td align="right">아이디:</td>
+					<td><input type="text" id="txtUserID" name="txtUserID"></td>
+				</tr>
+				<tr>
+					<td align="right">암호:</td>
+					<td><input type="password" id="txtPassword" name="txtPassword"></td>
+				</tr>
+				<tr>
+					<td colspan="2" align="center">
+						<input type="button"value="로그인" onclick="CheckForm();" /> 
+						<input type="reset" value="취소" />
+					</td>
+				</tr>
+			</table>
+		</div>
+	</form>
+
+</body>
+</html>

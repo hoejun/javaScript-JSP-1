@@ -1,0 +1,43 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Insert title here</title>
+<!-- 
+이벤트란? 사용자로부터 특정 조작이 행해 졌을때 컴퓨터로 부터 발생되는 일종의 신호.
+ -->
+
+</head>
+<body onload="window.alert('어서오세요');">
+<!-- 1. onload이벤트 : 현재 html문서가 웹브라우저로 열릴때(읽을때) 발생하는 이벤트 -->
+<!-- 2. onunload이벤트 : 현재 html문서가 웹브라우저가 닫힐때 발생하는 이벤트 -->
+<!-- 3. onfocus이벤트 : input텍스트박스에 포커스(커서)를 주면 발생하는 이벤트 -->
+<!-- 4. onblur이벤트 : input텍스트박스에 포커스(커서)를 잃을때 발생하는 이벤트 -->
+<!-- 5. onchange이벤트 : input텍스트박스에 텍스트 내용이 변경될때 발생하는 이벤트 -->
+<input type="text"
+	   onfocus="this.style.backgroundColor='yellow';"
+	   onblur="this.style.backgroundColor='white';"
+	   onchange="document.bgColor='silver';">
+	   
+<!-- 6. onkeypress이벤트 : 현재 텍스트박스에 텍스트를 타이핑할때(키를 눌렀다가 땔때)발생하는 이벤트 -->
+<input type="text" onkeypress="alert('타이핑하셨군요')"/>
+
+<!-- 
+	7. onclick이벤트 : 마우스를 클릭하면 발생하는 이벤트
+	8. onmouseover 이벤트 : 마우스 커서를 올려놓으면 발생하는 이벤트
+	9. ondblcick 이벤트 : 마우스를 더블클릭하면 발생하는 이벤트
+   10. onmouseout 이벤트 : 마우스를 올려놓았다가 밖으로 빠져나가면 발생하는 이벤트
+-->
+
+<table border="1" width="100%">
+		<tr>
+			<td onclick="alert('클릭하셨군요')">클릭</td>
+			<td onmouseover="alert('오버하셨군요')">마우스오버</td>
+		</tr>
+		<tr>
+			<td ondblclick="alert('더블클릭하셨군요')">더블클릭</td>
+			<td onmouseout="alert('밖으로 이동하셨군요')">마우스아웃</td>
+		</tr>
+</table>
+</body>
+</html>

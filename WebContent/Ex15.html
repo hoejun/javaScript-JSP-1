@@ -1,0 +1,55 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+//함수 선언
+//[1] 매개변수 없고, 반환값도 없는 함수 만들기
+//Hi이름의 함수 만들기
+//"안녕" 출력
+function Hi() {
+	document.write("안녕<br/>");	
+}
+
+//[2]매개변수가 있는 함수 만들기
+//Hello이름의 함수 만들기, 매개변수 이름 msg
+//msg 출력
+
+function Hello(msg) {
+	document.write(msg+"<br/>")
+}
+
+//[3]반환값이 있는 함수 만들기
+//Say이름의 함수 만들기, 매개변수 이름 str
+	//1행1열짜리 테이블 생성후 table 변수에 저장
+	//table변수 리턴
+
+function Say(str) {
+	var table="<table border='1'><tr><td>"+str+"</td></tr></table>";
+	return table;
+}
+	
+</script>
+</head>
+
+<body>
+<script type="text/javascript">
+//함수 호출(사용)
+//"안녕" 출력해주는 함수 호출
+Hi();
+
+//Hello()함수 호출시 "안녕" 전달
+Hello("안녕");
+
+//Hello()함수 호출시 "또봐" 전달
+Hello("또봐");
+//Say()함수 호출시 "안녕"전달, 전달후 반환받은 값을 출력
+document.write(Say("안녕~~~"));
+
+var str = Say("안녕~~~");
+document.write(str); //say 메소드의 반환값 출력
+
+</script>
+</body>
+</html>

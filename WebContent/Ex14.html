@@ -1,0 +1,37 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+/*매개변수와 반환값(Return Value)이 있는 함수 */
+
+function Hap(a, b) { //넘어온 두수의 합을 구하는 함수
+	
+	var c = a+b;
+	
+	return c; //즉! 넘겨온 2개의 수의 합을 함수 호출쪽으로 전달(반환)
+}
+
+function Pyung(p) {//넘어온 평수에 해당하는 제곱미터 구하는 함수
+	//1평은 3.3제곱미터 이므로 3.3을 곱한다.
+	return (p * 3.3);
+}
+</script>
+
+<script type="text/javascript">
+//함수 호출시 전달 값에 의해 결과값을 다시 되돌려(리턴) 받는다.
+var result = Hap(3, 5);
+document.write(result+"<br/>");
+
+document.write(Hap(3,3)+"<br/>");
+
+//Pyung(100) : //100평에 해당하는 제곱미터 : 100*3.3 330 제곱미터 획득
+document.write("100평은 : " + Pyung(100) + "제곱미터(m<sup>2</sup>)입니다.<br/>");
+</script>
+
+</head>
+<body>
+
+</body>
+</html>

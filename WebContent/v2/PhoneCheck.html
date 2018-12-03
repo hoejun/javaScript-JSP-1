@@ -1,0 +1,51 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+
+	function CheckForm() {
+		//010,~~~019 등등 선택하지 않았을때 경고 메세지 "휴대폰 번호를 입력하시오."
+		if(document.getElementById("txtMobile1").value ==""){
+			window.alert("휴대폰 번호를 입력 하시오.");
+			return false;
+		}
+		//만약 3번째 텍스트 값의 길이가 4자가 아니면 경고메세지
+	 	if(document.getElementById("txtMobile3").value.length != 4){
+			window.alert("마지막 번호는 4자리로 입력하시오");
+			document.getElementById("txtMobile3").focus();
+		}
+	}
+//event객체 : 키보드나 마우스등의 클릭이나 움직임을 설정할때 사용하는 객체
+//영문자 no, 숫자만을 입력받게 하는 방법
+function onlyNumber() {
+	
+		if((event.keyCode<48) ||(event.keyCode>57)){
+			//48코드->0
+			//57코드->A
+			event.returnValue = false;//리턴값을 false로 주어 영문자가 입력되는 것을 방지
+		}
+}
+
+</script>
+
+</head>
+<body>
+휴대폰 번호:
+<select id="txtMobile1">
+	<option value="">::선택::</option>
+	<option value="011">011</option>
+	<option value="016">016</option>
+	<option value="017">017</option>
+	<option value="018">018</option>
+	<option value="019">019</option>
+	<option value="010">010</option>
+</select>-
+<!-- 키입력시 이벤트(onkeypress)발생시 onlyNumber()함수호출 -->
+<input type="text" id="txtMobile2" size="4" onkeypress="onlyNumber();">-
+<input type="text" id="txtMobile3" size="4">
+<input type="button" value="가입" onclick="CheckForm();">
+
+</body>
+</html>

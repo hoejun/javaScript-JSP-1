@@ -1,0 +1,42 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Insert title here</title>
+<!-- 자바스크립트의 내장함수 -->
+<script type="text/javascript">
+
+//eval() : 문자열이나 수식으로 표현된 문자열을 숫자로 처리하여 계산하는 함수
+//문자열을 숫자로 처리하여 계산하는 함수
+var str = "3+5";
+//str  변수안의 값은 문자열이기 떄문에 "3+5"가 그대로 출력
+document.write(str);
+document.write("<br/>");
+
+//eval()함수를 사용하여 연산식을 계산해분다.
+document.write(eval(str));
+document.write("<br/>");
+
+//parseInt()함수
+var num = 12.34; //실수형 데이터
+document.write(num, "<br/>"); //12.34출력
+//num변수에 있는 12.34를 정수로 바꾸고 싶을때.. parseInt()함수 사용
+document.write(parseInt(num),"<br/>");
+
+//parseFloat()함수 : 수(모양) -> 실수로 바꾸어 준다.
+var su ="12.34";
+//typeof() : su변수안에 있는 데이터 타입을 알아볼때 사용.
+document.write(typeof(su), "<br/>"); //String
+//parseFloat()함수를 이용하여 su변수안의 문자열"12.34"를--> 실수 12.34로 변경
+document.write(typeof(parseFloat(su)), "<br/>");
+
+
+var nan ="안녕";
+//숫자가 아닌 모양의 값을 정수 또는 실수로 변경시 변경이 불가능하여 NaN메세지가 출력된다.
+document.write(parseFloat(nan),"<br/>");//NaN(Not a Number)메세지가 출력된다.
+</script>
+</head>
+<body>
+
+</body>
+</html>

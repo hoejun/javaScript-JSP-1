@@ -1,0 +1,142 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+/*자바스크립트 처리를 위한 대화상자  */
+
+//[1] 경고 대화 상자
+window.alert("안녕하세요. Javascript");
+//[2] 이스케이프 쉬퀀스 : 특수 문자
+alert("안녕하세요 . \n\t반갑습니다."); //줄바꿈(\n), 탭이동(\t), 백스페이스(\b)
+//[3] 확인 대화상자 (confirm()메소드)
+// - 메세지를 사용자에게 알려서 [확인]이나 [취소]를 선택하여 적절하게 조치 할 수 있게 해주는 대화상자
+
+var word = window.confirm("확인 또는 취소") ? "확인 클릭" : "취소 클릭";
+alert(word + "하셨군요");
+
+</script>
+
+<script type="text/javascript">
+/*조건문 */
+//[1] 단순 if문
+var a = 8;
+
+if(a%2==0){
+	document.write(a + "는 짝수 입니다.");
+}
+
+//[2] if ~else문
+var b =3;
+if(b%2 !=0){//즉 홀수라면
+	document.write("홀수입니다.");	
+}else{
+	document.write("짝수입니다.");
+} 
+
+//[3] 다중 if문
+var c = 7;
+
+if(c%2 ==0){//2의 배수 라면
+	document.write("2의 배수 입니다.");
+}else if(c%3==0){//3의 배수 라면
+	document.write("3의 배수입니다.");
+}else if(c%4==0){//4의 배수 라면
+	document.write("4의 배수입니다.");
+}else{// 2의 배수, 3의 배수, 4의 배수가 아니라면...
+	document.write("2,3,4의 배수가 아닙니다.");	
+}
+
+</script>
+
+<!-- 1월에서 12월중 매달 14일은 무슨 날인지 알아내는 프로그램-->
+<script type="text/javascript">
+var month =1; //1월 저장
+
+if(month == 1){//1월일때
+	document.write("1월13일은 다이어리 데이!!");
+}else if(month ==2){//2월일떄
+	document.write("2월14일은 발렌타인 데이!!");
+}else if(month ==3){//3월일때
+	document.write("3월14일은 화이트데이!!");
+}else{//1,2,3월달이 아닐때..
+	document.write("뭔 데이?");
+}
+
+</script>
+
+<hr/>
+
+<!-- 조건이 많을때.... switch ~case문을 사용. -->
+<script type="text/javascript">
+var mon =3; //1월 저장
+
+switch (mon) {
+case 1:
+	document.write("1월");
+	break;
+case 2:
+	document.write("2월");
+	break;
+case 3:
+	document.write("3월");
+	break;
+case 4:
+	document.write("4월");
+	break;
+default:
+	document.write("뭔데이?");
+}
+</script>
+
+<hr/>
+
+<!-- 반복문 -->
+<script type="text/javascript">
+
+//5번 출력하기 위해서 5줄 타이핑해야 한다.
+document.write("안녕<br/>");
+document.write("안녕<br/>");
+document.write("안녕<br/>");
+document.write("안녕<br/>");
+document.write("안녕<br/>");
+
+//for 반복문
+/* for(초기식; 조건식; 증감식){
+	반복한 코드(내용)
+}	
+ */	
+	
+ //안녕 5번 출력
+ for(var i=1; i<=5; i++){
+	 document.write("안녕<br/>");
+ }
+
+ 
+ //1~10 까지 출력
+ //for
+ for(var i=1; i<=10; i++){
+	 document.write(i+"<br/>");
+ }
+	
+ 
+ //1~100 까지 합을 화면에 출력
+ //합계 저장 변수선언 sum
+ //for
+ var sum = 0;
+ for(var j=1; j<=100; j++){
+	 sum +=j;
+ }
+	
+ document.write("1부터 100까지의 합 : " + sum +"입니다.");
+	
+ //출력 내용
+ //1부터 100까지의 합: ()입니다.
+</script>
+
+</head>
+<body>
+
+</body>
+</html>
